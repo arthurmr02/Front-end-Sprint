@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câmera Pro</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+ 
+    <div class="container-camera">
+    
+        <div class="visualizador" id="visualizador">
+            <div class="topo">
+                <button class="btn-icone"><i class="fas fa-bolt-slash"></i></button>
+                <div class="audio" id="indicadorGravacao">
+                    <div class="ponto-rec"></div> GRAVANDO <span id="temporizador">00:00</span>
+                </div>
+                <button class="btn-icone"><i class="fas fa-cog"></i></button>
+            </div>
+        </div>
+ 
+        
+        <div class="controles-sobrepostos">
+            <div class="seletor-modo">
+                <span class="modo">VÍDEO</span>
+                <span class="modo ativo">FOTO</span>
+                <span class="modo">RETRATO</span>
+            </div>
+           
+            <div class="acoes-principais">
+                <div class="previa-galeria" onclick="abrirGaleria()">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=100" id="imagemMiniatura">
+                </div>
+               
+                <button class="botao-disparador" id="botaoDisparador"></button>
+               
+                <button class="btn-secundario" id="botaoAudio">
+                    <i class="fas fa-microphone" id="iconeAudio"></i>
+                </button>
+            </div>
+        </div>
+ 
+        
+        <div id="modalSalvar" class="modal">
+            <div class="conteudo-modal">
+                <h3>Arquivar em...</h3>
+                <div id="listaPastas" class="lista-selecao-pastas"></div>
+                <div class="area-nova-pasta">
+                    <input type="text" id="inputNovaPasta" placeholder="Nome da pasta...">
+                    <button id="btnAdicionarPasta"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="btn-fechar" id="btnCancelar">Cancelar</button>
+            </div>
+        </div>
+ 
+        
+        <div id="modalGaleria" class="modal">
+            <div class="conteudo-modal">
+                <h3>Minhas Pastas</h3>
+                <div id="gradeGaleria" class="grade-galeria"></div>
+                <button class="btn-fechar" onclick="fecharModal('modalGaleria')">Voltar</button>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

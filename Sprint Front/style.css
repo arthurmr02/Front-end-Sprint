@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    background: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+ 
+.container-camera {
+    position: relative;
+    width: 375px;
+    height: 700px;
+    background: #000;
+    border-radius: 45px;
+    border: 8px solid #222;
+    overflow: hidden;
+}
+ 
+.visualizador {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75%;
+    background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600') center / cover;
+    transition: filter 0.1s;
+}
+ 
+.topo {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 20px;
+}
+ 
+.audio {
+    display: none;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    align-items: center;
+    gap: 5px;
+}
+ 
+.ponto-rec {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse 1s infinite;
+}
+ 
+.controles-sobrepostos {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 25%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+.seletor-modo {
+    color: white;
+    font-size: 11px;
+    margin: 15px 0;
+    display: flex;
+    gap: 20px;
+}
+ 
+.modo.ativo {
+    color: #ffcc00;
+}
+ 
+.acoes-principais {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ 
+.botao-disparador {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    border: 4px solid #000;
+    outline: 3px solid white;
+    cursor: pointer;
+}
+ 
+.previa-galeria {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #333;
+}
+ 
+.previa-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.btn-secundario {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+ 
+.btn-secundario.gravando {
+    background: red;
+}
+ 
+.modal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.conteudo-modal {
+    background: #1c1c1e;
+    width: 85%;
+    padding: 25px;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+}
+ 
+.lista-selecao-pastas,
+.grade-galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+ 
+.btn-pasta,
+.card-pasta {
+    background: #2c2c2e;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+ 
+.grade-galeria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+ 
+.area-nova-pasta {
+    display: flex;
+    gap: 5px;
+}
+ 
+.area-nova-pasta input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #3a3a3c;
+    color: white;
+}
+ 
+.area-nova-pasta button {
+    background: #ffcc00;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+ 
+.btn-fechar {
+    background: none;
+    border: none;
+    color: red;
+    margin-top: 15px;
+    cursor: pointer;
+}
+ 
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
